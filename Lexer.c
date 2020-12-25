@@ -43,6 +43,7 @@ void getToken()
 
     // Ignore Whitespaces and Newlines and Comments
     ignoreWhiteSpaces();
+    // printf("hahua : %c ---- >", currentChar);
     // printf("hahu carac : %c ", currentChar);
     if (currentChar == EOF)
     {
@@ -60,7 +61,8 @@ void getToken()
     }
     else
     {
-        LexError("Invalid Token ---> Quitting");
+
+        // LexError("Invalid Token ---> Quitting");
     }
     printf("current token : %s ---- > \n", currentToken.value);
 }

@@ -87,14 +87,14 @@ int main()
 void verifyToken(token_code code_to_test, char *erreur)
 {
 
-    // printf("compared to : %d\n", code_to_test);
+    // printf("%s --- > compared to : %d\n", currentToken.value, code_to_test);
     if (currentToken.code == code_to_test)
     {
         getToken();
     }
     else
     {
-        printf("%s\n", erreur);
+        printf("%s --- Parsing Failed check your code\n", erreur);
         exit(0);
     }
 }
@@ -113,6 +113,7 @@ void Program()
     verifyToken(ID, "ID missing");
     verifyToken(PV, "PV missing");
     Block();
+
     verifyToken(PT, "PT missing");
 }
 
@@ -195,7 +196,9 @@ void Insts()
             break;
         }
     }
+    // printf("SALIT : \n");
     verifyToken(END, "END missing");
+    // printf("SALIT : \n");
 }
 
 void Inst()
